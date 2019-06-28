@@ -1,0 +1,15 @@
+dubbo:
+  application:
+    name: index-web
+  registry:
+    protocol: zookeeper
+    address: 106.14.57.231:2181
+  consumer:
+    timeout: 12000
+server:
+  port: 9091
+
+spring:
+  thymeleaf:
+    cache: false
+

@@ -1,0 +1,15 @@
+dubbo:
+  application:
+    name: item-web
+  registry:
+    protocol: zookeeper
+    address: 106.14.57.231:2181
+server:
+  port: 9093
+spring:
+  rabbitmq:
+    host: 106.14.57.231
+    username: javaee1902
+    virtual-host: /javaee1902
+    password: 123
+    port: 5672

@@ -1,0 +1,20 @@
+dubbo:
+  application:
+    name: login-web
+  registry:
+    protocol: zookeeper
+    address: 106.14.57.231:2181
+  consumer:
+    timeout: 12000
+server:
+  port: 9096
+spring:
+  thymeleaf:
+    cache: false
+  redis:
+    host: 106.14.57.231
+    port: 6379
+    password: 123
+    jedis:
+      pool:
+        max-active: 66

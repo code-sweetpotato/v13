@@ -1,0 +1,36 @@
+
+spring:
+  mail:
+    username: 495296062@qq.com
+    password: vouswsjwnpbwbigb
+    host: smtp.qq.com
+    default-encoding: utf-8
+  redis:
+    host: 106.14.57.231
+    port: 6379
+    password: 123
+    jedis:
+      pool:
+        max-active: 66
+  rabbitmq:
+    host: 106.14.57.231
+    username: javaee1902
+    virtual-host: /javaee1902
+    password: 123
+    port: 5672
+
+mail:
+  fromAddr: 495296062@qq.com
+
+
+dubbo:
+  application:
+    name: email-service
+  registry:
+    protocol: zookeeper
+    address: 106.14.57.231:2181
+  protocol:
+    port: 28813
+
+server:
+  port: 8083

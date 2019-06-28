@@ -1,0 +1,33 @@
+dubbo:
+  application:
+    name: center-web
+  registry:
+    protocol: zookeeper
+    address: 106.14.57.231:2181
+  consumer:
+    timeout: 12000
+server:
+  port: 9090
+
+spring:
+  thymeleaf:
+    cache: false
+  rabbitmq:
+    host: 106.14.57.231
+    username: javaee1902
+    virtual-host: /javaee1902
+    password: 123
+    port: 5672
+
+fdfs:
+  so-timeout: 1500
+  connect-timeout: 600
+  pool:
+    jmx-enabled: false
+  thumb-image:
+    width: 100
+    height: 100
+  tracker-list: 10.36.8.8:22122
+
+image:
+  server: http://10.36.8.8/

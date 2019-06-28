@@ -1,0 +1,7 @@
+spring:
+  rabbitmq:
+    host: 106.14.57.231
+    username: javaee1902
+    virtual-host: /javaee1902
+    password: 123
+    port: 5672

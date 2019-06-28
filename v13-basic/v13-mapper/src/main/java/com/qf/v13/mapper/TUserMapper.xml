@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.v13.mapper.TUserMapper">
+  <resultMap id="BaseResultMap" type="com.qf.v13.entity.TUser">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="flag" jdbcType="BIT" property="flag" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="age" jdbcType="BIGINT" property="age" />
+    <result column="telphone" jdbcType="VARCHAR" property="telphone" />
+    <result column="images" jdbcType="VARCHAR" property="images" />
+    <result column="isadmin" jdbcType="BIT" property="isadmin" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, password, email, flag, nickname, sex, age, telphone, images, isadmin
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.qf.v13.entity.TUser">
+    insert into t_user (id, username, password, 
+      email, flag, nickname, 
+      sex, age, telphone, 
+      images, isadmin)
+    values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{flag,jdbcType=BIT}, #{nickname,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{age,jdbcType=BIGINT}, #{telphone,jdbcType=VARCHAR}, 
+      #{images,jdbcType=VARCHAR}, #{isadmin,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qf.v13.entity.TUser">
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="flag != null">
+        flag,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="telphone != null">
+        telphone,
+      </if>
+      <if test="images != null">
+        images,
+      </if>
+      <if test="isadmin != null">
+        isadmin,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        #{flag,jdbcType=BIT},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=BIGINT},
+      </if>
+      <if test="telphone != null">
+        #{telphone,jdbcType=VARCHAR},
+      </if>
+      <if test="images != null">
+        #{images,jdbcType=VARCHAR},
+      </if>
+      <if test="isadmin != null">
+        #{isadmin,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qf.v13.entity.TUser">
+    update t_user
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="flag != null">
+        flag = #{flag,jdbcType=BIT},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=BIGINT},
+      </if>
+      <if test="telphone != null">
+        telphone = #{telphone,jdbcType=VARCHAR},
+      </if>
+      <if test="images != null">
+        images = #{images,jdbcType=VARCHAR},
+      </if>
+      <if test="isadmin != null">
+        isadmin = #{isadmin,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qf.v13.entity.TUser">
+    update t_user
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      flag = #{flag,jdbcType=BIT},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      age = #{age,jdbcType=BIGINT},
+      telphone = #{telphone,jdbcType=VARCHAR},
+      images = #{images,jdbcType=VARCHAR},
+      isadmin = #{isadmin,jdbcType=BIT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="isExistByUsername" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(*) FROM t_user u WHERE u.username =#{username}
+
+  </select>
+  <select id="isExistEmail" parameterType="java.lang.String" resultType="java.lang.Integer">
+    select count(*) FROM t_user u WHERE u.email =#{email}
+
+  </select>
+
+  <select id="selectByUsername" parameterType="java.lang.String" resultType="com.qf.v13.entity.TUser">
+    select username,password FROM t_user u
+    WHERE  u.flag = 1 and u.username =#{username} or u.telphone = #{username}
+
+  </select>
+
+  <select id="checkLogin" parameterType="java.lang.String" resultType="com.qf.v13.entity.TUser">
+    select *  FROM t_user u WHERE u.username =#{username} AND u.password =#{password} AND u.flag = 1;
+
+  </select>
+  <select id="getUserByUsername" parameterType="java.lang.String" resultType="com.qf.v13.entity.TUser">
+    select * FROM t_user u
+    WHERE u.username =#{username} AND u.flag = 1
+
+  </select>
+</mapper>

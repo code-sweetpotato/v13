@@ -1,0 +1,29 @@
+dubbo:
+  application:
+    name: register-web
+  registry:
+    protocol: zookeeper
+    address: 106.14.57.231:2181
+  consumer:
+    timeout: 12000
+spring:
+  thymeleaf:
+    cache: false
+  rabbitmq:
+    host: 106.14.57.231
+    username: javaee1902
+    virtual-host: /javaee1902
+    password: 123
+    port: 5672
+  redis:
+    host: 106.14.57.231
+    port: 6379
+    password: 123
+    jedis:
+      pool:
+        max-active: 66
+
+mail:
+  fromAddr: 495296062@qq.com
+server:
+  port: 9095

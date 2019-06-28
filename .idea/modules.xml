@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-web/index-web/index-web.iml" filepath="$PROJECT_DIR$/v13-web/index-web/index-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-temp/temp-JWT/temp-JWT.iml" filepath="$PROJECT_DIR$/v13-temp/temp-JWT/temp-JWT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-temp/temp-SMS/temp-SMS.iml" filepath="$PROJECT_DIR$/v13-temp/temp-SMS/temp-SMS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-temp/temp-email/temp-email.iml" filepath="$PROJECT_DIR$/v13-temp/temp-email/temp-email.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-temp/temp-httpclient/temp-httpclient.iml" filepath="$PROJECT_DIR$/v13-temp/temp-httpclient/temp-httpclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-temp/temp-jedis/temp-jedis.iml" filepath="$PROJECT_DIR$/v13-temp/temp-jedis/temp-jedis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-temp/temp-rubbitmq/temp-rubbitmq.iml" filepath="$PROJECT_DIR$/v13-temp/temp-rubbitmq/temp-rubbitmq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-temp/temp-spring-rubbitmq/temp-spring-rubbitmq.iml" filepath="$PROJECT_DIR$/v13-temp/temp-spring-rubbitmq/temp-spring-rubbitmq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-temp/temp-timer/temp-timer.iml" filepath="$PROJECT_DIR$/v13-temp/temp-timer/temp-timer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13.iml" filepath="$PROJECT_DIR$/v13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-api/v13-api.iml" filepath="$PROJECT_DIR$/v13-api/v13-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-basic/v13-basic.iml" filepath="$PROJECT_DIR$/v13-basic/v13-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-web/v13-center-web/v13-center-web.iml" filepath="$PROJECT_DIR$/v13-web/v13-center-web/v13-center-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-basic/v13-common/v13-common.iml" filepath="$PROJECT_DIR$/v13-basic/v13-common/v13-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-api/v13-email-api/v13-email-api.iml" filepath="$PROJECT_DIR$/v13-api/v13-email-api/v13-email-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-service/v13-email-service/v13-email-service.iml" filepath="$PROJECT_DIR$/v13-service/v13-email-service/v13-email-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-basic/v13-entity/v13-entity.iml" filepath="$PROJECT_DIR$/v13-basic/v13-entity/v13-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-web/v13-item-web/v13-item-web.iml" filepath="$PROJECT_DIR$/v13-web/v13-item-web/v13-item-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-web/v13-login-web/v13-login-web.iml" filepath="$PROJECT_DIR$/v13-web/v13-login-web/v13-login-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-basic/v13-mapper/v13-mapper.iml" filepath="$PROJECT_DIR$/v13-basic/v13-mapper/v13-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-api/v13-product-api/v13-product-api.iml" filepath="$PROJECT_DIR$/v13-api/v13-product-api/v13-product-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-service/v13-product-service/v13-product-service.iml" filepath="$PROJECT_DIR$/v13-service/v13-product-service/v13-product-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-web/v13-register-web/v13-register-web.iml" filepath="$PROJECT_DIR$/v13-web/v13-register-web/v13-register-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-api/v13-search-api/v13-search-api.iml" filepath="$PROJECT_DIR$/v13-api/v13-search-api/v13-search-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-service/v13-search-service/v13-search-service.iml" filepath="$PROJECT_DIR$/v13-service/v13-search-service/v13-search-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-web/v13-search-web/v13-search-web.iml" filepath="$PROJECT_DIR$/v13-web/v13-search-web/v13-search-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-service/v13-service.iml" filepath="$PROJECT_DIR$/v13-service/v13-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-temp/v13-temp.iml" filepath="$PROJECT_DIR$/v13-temp/v13-temp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-api/v13-user-api/v13-user-api.iml" filepath="$PROJECT_DIR$/v13-api/v13-user-api/v13-user-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-service/v13-user-service/v13-user-service.iml" filepath="$PROJECT_DIR$/v13-service/v13-user-service/v13-user-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-web/v13-web.iml" filepath="$PROJECT_DIR$/v13-web/v13-web.iml" />
+    </modules>
+  </component>
+</project>
