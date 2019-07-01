@@ -150,4 +150,13 @@
     </foreach>
 
   </update>
+
+  <select id="batchSelectById" parameterType="list" resultMap="BaseResultMap">
+    select *
+    from t_product
+    where id IN
+    <foreach collection="list" open="(" separator="," close=")" item="id">
+     #{id}
+  </foreach>
+  </select>
 </mapper>

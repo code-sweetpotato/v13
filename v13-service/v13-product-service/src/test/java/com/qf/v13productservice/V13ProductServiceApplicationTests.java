@@ -56,4 +56,17 @@ public class V13ProductServiceApplicationTests {
 
 	}
 
+	@Test
+	public void testBatchSelect(){
+		List<Long> ids = new ArrayList<>();
+		ids.add(3L);
+		ids.add(1L);
+		ids.add(5L);
+		List<TProduct> tProducts = productService.batchSelectById(ids);
+		for (TProduct tProduct : tProducts) {
+			System.out.println(tProduct.getName());
+		}
+
+	}
+
 }

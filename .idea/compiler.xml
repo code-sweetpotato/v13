@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
         <module name="index-web" />
+        <module name="temp-BCrypt" />
         <module name="temp-email" />
         <module name="temp-httpclient" />
         <module name="temp-jedis" />
@@ -16,6 +17,9 @@
         <module name="temp-SMS" />
         <module name="temp-spring-rubbitmq" />
         <module name="temp-timer" />
+        <module name="v13-cart-api" />
+        <module name="v13-cart-service" />
+        <module name="v13-cart-web" />
         <module name="v13-center-web" />
         <module name="v13-common" />
         <module name="v13-email-api" />
@@ -41,6 +45,7 @@
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
       <module name="index-web" target="1.8" />
+      <module name="temp-BCrypt" target="1.5" />
       <module name="temp-email" target="1.5" />
       <module name="temp-httpclient" target="1.5" />
       <module name="temp-jedis" target="1.5" />
@@ -52,6 +57,9 @@
       <module name="v13" target="1.5" />
       <module name="v13-api" target="1.5" />
       <module name="v13-basic" target="1.5" />
+      <module name="v13-cart-api" target="1.5" />
+      <module name="v13-cart-service" target="1.8" />
+      <module name="v13-cart-web" target="1.8" />
       <module name="v13-center-web" target="1.8" />
       <module name="v13-common" target="1.5" />
       <module name="v13-email-api" target="1.5" />

@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
@@ -15,6 +16,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class V13UserServiceApplicationTests {
 	@Autowired
 	private IUserService userService;
+
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Test
 	public void contextLoads() {
@@ -63,6 +67,40 @@ public class V13UserServiceApplicationTests {
 		ResultBean resultBean = userService.selectByUsername(user);
 		System.out.println(resultBean.getStatusCode());
 		System.out.println(resultBean.getData());
+
+	}
+
+
+	//整合Spring BCrypt
+	@Test
+	public void testBCrypt() {
+		TUser user = new TUser();
+
+		user.setUsername("BCrypt第三次测试");
+		user.setPassword("zhangsan");
+		user.setEmail("38997654@qq.com");
+		user.setFlag(false);
+		user.setIsadmin(false);
+		String encode = bCryptPasswordEncoder.encode(user.getPassword());
+		user.setPassword(encode);
+		userService.insert(user);
+		System.out.println("加密成功!");
+	}
+
+	@Test
+	public void testParseBCrypt() {
+		TUser user = new TUser();
+
+		user.setUsername("BCrypt第三次测试");
+		user.setPassword("zhangsan");
+
+		TUser resultUser = userService.getUserByUsername(user.getUsername());
+		boolean result = bCryptPasswordEncoder.matches(user.getPassword(),resultUser.getPassword());
+		if(result){
+			System.out.println("密码正确!");
+		}else {
+			System.out.println("密码错误!");
+		}
 
 	}
 

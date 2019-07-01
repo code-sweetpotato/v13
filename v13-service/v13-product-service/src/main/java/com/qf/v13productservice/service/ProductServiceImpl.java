@@ -73,6 +73,11 @@ public class ProductServiceImpl extends BaseServiceImpl<TProduct> implements IPr
         return productMapper.detchUpdateFlagById(ids);
     }
 
+    @Override
+    public List<TProduct> batchSelectById(List<Long> ids) {
+        return productMapper.batchSelectById(ids);
+    }
+
     /*
     * 方法重写,父方法是直接删除,而我们只是逻辑删除
     * */

@@ -11,9 +11,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
-public class CommonConfigu {
+public class CommonConfigu extends WebSecurityConfigurerAdapter{
 
     //声明队列  交换机   绑定关系
     @Bean
@@ -37,5 +41,20 @@ public class CommonConfigu {
         redisTemplate.setConnectionFactory(factory);
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         return redisTemplate;
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+
+        http
+                .authorizeRequests()
+                .antMatchers("/**").permitAll()
+                .anyRequest().authenticated()
+                .and().csrf().disable();
+    }
+
+    @Bean
+    public BCryptPasswordEncoder bcryptPasswordEncoder(){
+        return new BCryptPasswordEncoder();
     }
 }

@@ -18,6 +18,7 @@
         <module>temp-jedis</module>
         <module>temp-SMS</module>
         <module>temp-JWT</module>
+        <module>temp-BCrypt</module>
     </modules>
 
 

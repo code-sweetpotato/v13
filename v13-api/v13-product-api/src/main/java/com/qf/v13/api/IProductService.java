@@ -15,5 +15,7 @@ public interface IProductService extends IBaseService<TProduct> {
 
     public int batchDel(List<Long> ids);
 
+    public List<TProduct> batchSelectById(List<Long> ids);
+
 
 }

@@ -8,4 +8,6 @@ import java.util.List;
 public interface TProductMapper extends IBaseDao<TProduct>{
 
     public int detchUpdateFlagById(List<Long> ids);
+
+    public List<TProduct> batchSelectById(List<Long> ids);
 }

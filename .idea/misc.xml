@@ -17,7 +17,14 @@
         <option value="$PROJECT_DIR$/v13-service/v13-email-service/pom.xml" />
         <option value="$PROJECT_DIR$/v13-temp/temp-timer/pom.xml" />
         <option value="$PROJECT_DIR$/v13-web/v13-login-web/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-service/v13-cart-service/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-web/v13-cart-web/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/v13-temp/temp-BCrypt/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">

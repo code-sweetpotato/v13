@@ -15,6 +15,9 @@
       <module fileurl="file://$PROJECT_DIR$/v13.iml" filepath="$PROJECT_DIR$/v13.iml" />
       <module fileurl="file://$PROJECT_DIR$/v13-api/v13-api.iml" filepath="$PROJECT_DIR$/v13-api/v13-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/v13-basic/v13-basic.iml" filepath="$PROJECT_DIR$/v13-basic/v13-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-api/v13-cart-api/v13-cart-api.iml" filepath="$PROJECT_DIR$/v13-api/v13-cart-api/v13-cart-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-service/v13-cart-service/v13-cart-service.iml" filepath="$PROJECT_DIR$/v13-service/v13-cart-service/v13-cart-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-web/v13-cart-web/v13-cart-web.iml" filepath="$PROJECT_DIR$/v13-web/v13-cart-web/v13-cart-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/v13-web/v13-center-web/v13-center-web.iml" filepath="$PROJECT_DIR$/v13-web/v13-center-web/v13-center-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/v13-basic/v13-common/v13-common.iml" filepath="$PROJECT_DIR$/v13-basic/v13-common/v13-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/v13-api/v13-email-api/v13-email-api.iml" filepath="$PROJECT_DIR$/v13-api/v13-email-api/v13-email-api.iml" />
