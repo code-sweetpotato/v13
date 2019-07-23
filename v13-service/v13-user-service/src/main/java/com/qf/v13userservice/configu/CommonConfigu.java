@@ -57,4 +57,14 @@ public class CommonConfigu extends WebSecurityConfigurerAdapter{
     public BCryptPasswordEncoder bcryptPasswordEncoder(){
         return new BCryptPasswordEncoder();
     }
+
+
+    @Bean(name = "redisLua")
+    public RedisTemplate<String,Object> initRedisLua(RedisConnectionFactory factory){
+        RedisTemplate<String,Object> redisTemplate = new RedisTemplate();
+
+        redisTemplate.setConnectionFactory(factory);
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        return redisTemplate;
+    }
 }

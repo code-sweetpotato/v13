@@ -4,12 +4,22 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.qf.v13.api.IUserService;
 import com.qf.v13.entity.TUser;
 import com.qf.v13.pojo.ResultBean;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
+import org.springframework.scripting.support.ResourceScriptSource;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -19,6 +29,9 @@ public class V13UserServiceApplicationTests {
 
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+	@Resource(name = "redisLua")
+	private RedisTemplate redisTemplate;
 
 	@Test
 	public void contextLoads() {
@@ -101,6 +114,71 @@ public class V13UserServiceApplicationTests {
 		}else {
 			System.out.println("密码错误!");
 		}
+
+	}
+
+	@Test
+	public void testLua(){
+		DefaultRedisScript<Boolean> script = new DefaultRedisScript<>();
+		script.setScriptSource(new ResourceScriptSource(new ClassPathResource("testlua.lua")));
+		script.setResultType(Boolean.class);
+		Boolean result = (boolean) redisTemplate.execute(script, null);
+		System.out.println(result);
+
+	}
+
+
+	@Test
+	public void testLuaContainParam(){
+		DefaultRedisScript<Boolean> script = new DefaultRedisScript<>();
+		script.setScriptSource(new ResourceScriptSource(new ClassPathResource("luaParam.lua")));
+		script.setResultType(Boolean.class);
+		List<String> list = new ArrayList<>(2);
+		list.add("testparam");
+		list.add("success");
+		Boolean result = (boolean) redisTemplate.execute(script, list);
+		System.out.println(result);
+
+	}
+
+	@Test
+	public void testLuaGet(){
+		DefaultRedisScript<Byte[]> script = new DefaultRedisScript<>();
+		script.setScriptSource(new ResourceScriptSource(new ClassPathResource("get.lua")));
+		script.setResultType(Byte[].class);
+		//List<String> list = new ArrayList<>(1);
+		//list.add("testparam");
+
+		byte[] result = (byte[]) redisTemplate.execute(script, null);
+		System.out.println(new String(result));
+
+
+	}
+
+
+
+
+	@Test
+	public void testSet(){
+
+		Boolean result1 = redisTemplate.opsForValue().setIfAbsent("lock", "666", 60, TimeUnit.SECONDS);
+		Boolean result2 = redisTemplate.opsForValue().setIfAbsent("lock", "888", 60, TimeUnit.SECONDS);
+		System.out.println(result1);
+		System.out.println(result2);
+
+
+	}
+
+
+	@Test
+	public void testDel(){
+		DefaultRedisScript<Boolean> script = new DefaultRedisScript<>();
+		script.setScriptSource(new ResourceScriptSource(new ClassPathResource("del.lua")));
+		script.setResultType(Boolean.class);
+		Boolean result = (boolean) redisTemplate.execute(script, null);
+		System.out.println(result);
+
+
 
 	}
 

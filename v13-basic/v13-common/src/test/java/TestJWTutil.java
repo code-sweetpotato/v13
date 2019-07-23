@@ -19,10 +19,10 @@ public class TestJWTutil {
     //eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4YTcwN2Q4NC03NzEyLTQ1MGEtYjczOS1jYmU2OWY3NTBhYjYiLCJzdWIiOiLlt6XlhbfnsbvlsIHoo4UiLCJpYXQiOjE1NjE3MTM4NTIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTU2MTcxNTY1Mn0.MnToUd1_Owzfz7ZYdVaYulI62BDCICDTHLbHs7LvjZ4
     @Test
     public void testJwt2(){
-        String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4YTcwN2Q4NC03NzEyLTQ1MGEtYjczOS1jYmU2OWY3NTBhYjYiLCJzdWIiOiLlt6XlhbfnsbvlsIHoo4UiLCJpYXQiOjE1NjE3MTM4NTIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTU2MTcxNTY1Mn0.MnToUd1_Owzfz7ZYdVaYulI62BDCICDTHLbHs7LvjZ4";
+        /*String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4YTcwN2Q4NC03NzEyLTQ1MGEtYjczOS1jYmU2OWY3NTBhYjYiLCJzdWIiOiLlt6XlhbfnsbvlsIHoo4UiLCJpYXQiOjE1NjE3MTM4NTIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTU2MTcxNTY1Mn0.MnToUd1_Owzfz7ZYdVaYulI62BDCICDTHLbHs7LvjZ4";
         ResultBean resultBean = JWTUtil.parseToken(token);
         System.out.println(resultBean.getStatusCode());
-        System.out.println(resultBean.getData().toString());
+        System.out.println(resultBean.getData().toString());*/
 
     }
 

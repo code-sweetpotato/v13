@@ -8,11 +8,13 @@ import com.qf.v13.entity.TUser;
 import com.qf.v13.mapper.TUserMapper;
 import com.qf.v13.pojo.ResultBean;
 import com.qf.v13.utils.JWTUtil;
+import io.jsonwebtoken.Jwt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -53,9 +55,9 @@ public class UserServiceImpl extends BaseServiceImpl<TUser> implements IUserServ
         TUser resultUser = userMapper.selectByUsername(user.getUsername());
         if(resultUser != null){
             if(resultUser.getPassword().equals(user.getPassword())){
-               String uuid = UUID.randomUUID().toString();
-               String subject = "登录认证";
-                String token = JWTUtil.produceToken(uuid, subject);
+             //  String uuid = UUID.randomUUID().toString();
+               String subject = resultUser.getUsername();
+                String token = JWTUtil.produceToken(resultUser.getId().toString(), subject);
     /*                String key = "user_token_"+uuid;
                 user.setPassword(null);
                 redisTemplate.opsForValue().set(key,user);
@@ -81,6 +83,7 @@ public class UserServiceImpl extends BaseServiceImpl<TUser> implements IUserServ
             return new ResultBean("200",user);
         }
         return new ResultBean("404",null);*/
+
         return JWTUtil.parseToken(uuid);
     }
 

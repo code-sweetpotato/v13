@@ -4,6 +4,8 @@ import com.qf.v13.base.IBaseService;
 import com.qf.v13.entity.TUser;
 import com.qf.v13.pojo.ResultBean;
 
+import javax.servlet.http.HttpServletResponse;
+
 public interface IUserService extends IBaseService<TUser>{
     //通过用户名查询用户信息,返回若存在返回用户的id,不存在返回0
     public int isExistByUsername(String username);

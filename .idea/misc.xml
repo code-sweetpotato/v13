@@ -19,6 +19,8 @@
         <option value="$PROJECT_DIR$/v13-web/v13-login-web/pom.xml" />
         <option value="$PROJECT_DIR$/v13-service/v13-cart-service/pom.xml" />
         <option value="$PROJECT_DIR$/v13-web/v13-cart-web/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-web/v13-pay-web/pom.xml" />
+        <option value="$PROJECT_DIR$/v13-web/v13-miaosha/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

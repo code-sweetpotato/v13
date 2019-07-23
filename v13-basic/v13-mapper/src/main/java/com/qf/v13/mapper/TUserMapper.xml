@@ -170,7 +170,7 @@
   </select>
 
   <select id="selectByUsername" parameterType="java.lang.String" resultType="com.qf.v13.entity.TUser">
-    select username,password FROM t_user u
+    select id,username,password FROM t_user u
     WHERE  u.flag = 1 and u.username =#{username} or u.telphone = #{username}
 
   </select>

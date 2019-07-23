@@ -26,6 +26,8 @@
       <module fileurl="file://$PROJECT_DIR$/v13-web/v13-item-web/v13-item-web.iml" filepath="$PROJECT_DIR$/v13-web/v13-item-web/v13-item-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/v13-web/v13-login-web/v13-login-web.iml" filepath="$PROJECT_DIR$/v13-web/v13-login-web/v13-login-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/v13-basic/v13-mapper/v13-mapper.iml" filepath="$PROJECT_DIR$/v13-basic/v13-mapper/v13-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-web/v13-miaosha/v13-miaosha.iml" filepath="$PROJECT_DIR$/v13-web/v13-miaosha/v13-miaosha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/v13-web/v13-pay-web/v13-pay-web.iml" filepath="$PROJECT_DIR$/v13-web/v13-pay-web/v13-pay-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/v13-api/v13-product-api/v13-product-api.iml" filepath="$PROJECT_DIR$/v13-api/v13-product-api/v13-product-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/v13-service/v13-product-service/v13-product-service.iml" filepath="$PROJECT_DIR$/v13-service/v13-product-service/v13-product-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/v13-web/v13-register-web/v13-register-web.iml" filepath="$PROJECT_DIR$/v13-web/v13-register-web/v13-register-web.iml" />

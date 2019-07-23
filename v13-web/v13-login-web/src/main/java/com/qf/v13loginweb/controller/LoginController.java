@@ -3,11 +3,15 @@ package com.qf.v13loginweb.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.qf.v13.api.ICartService;
 import com.qf.v13.api.IUserService;
 import com.qf.v13.entity.TUser;
+import com.qf.v13.pojo.JWTResultBean;
 import com.qf.v13.pojo.ResultBean;
 
 
+import com.qf.v13.utils.JWTUtil;
+import jdk.nashorn.internal.parser.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
@@ -31,20 +35,26 @@ public class LoginController {
     private IUserService userService;
 
 
-
+    @Reference
+    private ICartService cartService;
 
     @RequestMapping("login")
     @ResponseBody
-    public ResultBean login(TUser user, HttpServletResponse response,String referer){
+    public ResultBean login(TUser user, HttpServletResponse response,String referer,
+            @CookieValue(name = "user_cart",required = false) String guest_id){
         ResultBean resultBean = userService.selectByUsername(user);
         if("200".equals(resultBean.getStatusCode())){
-            String uuid = resultBean.getData().toString();//拿到uuid
+            String uuid = resultBean.getData().toString();//拿到Token
+
             //将uuid储存到cookie上
-            Cookie cookie = new Cookie("user_uuid",uuid);
+            Cookie cookie = new Cookie("user_uuid",resultBean.getData().toString());
             cookie.setPath("/");
             cookie.setDomain("qf.com");
             cookie.setHttpOnly(true);
             response.addCookie(cookie);
+            ResultBean<JWTResultBean> bean = JWTUtil.parseToken(uuid);
+
+            cartService.merge(guest_id,bean.getData().getUser().getId().toString());
             if("".equals(referer)){
                 return new ResultBean("200","http://www.qf.com:9091/index/list");
 
@@ -84,7 +94,7 @@ public class LoginController {
     @RequestMapping("checkLogin")
     @ResponseBody
     public ResultBean checkLogin(@CookieValue(name = "user_uuid",required = false) String uuid,
-                                 HttpServletRequest request,String callBack){
+                                 HttpServletRequest request,String callBack,HttpServletResponse response){
      /*   Cookie[] cookies = request.getCookies();
         TUser user = null;
         for (Cookie cookie : cookies) {
@@ -103,8 +113,18 @@ public class LoginController {
         }*/
 
         if(uuid != null){
+            ResultBean resultBean = userService.checkLogin(uuid);
+            if("200".equals(resultBean.getStatusCode())){
+                JWTResultBean result = (JWTResultBean) resultBean.getData();
+                Cookie cookie = new Cookie("user_uuid",result.getToken());
+                cookie.setHttpOnly(true);
+                cookie.setPath("/");
+                cookie.setDomain("qf.com");
 
-            return userService.checkLogin(uuid);
+                response.addCookie(cookie);
+                return new ResultBean("200",result.getUser());
+            }
+
 
         }
 
@@ -148,7 +168,7 @@ public class LoginController {
      @RequestMapping("check")
      @ResponseBody
      public String check(@CookieValue(name = "user_uuid",required = false) String uuid,
-                                   HttpServletRequest request, String callBack) throws JsonProcessingException {
+                                   HttpServletRequest request, String callBack,HttpServletResponse response) throws JsonProcessingException {
         ResultBean resultBean = null;
          ObjectMapper objectMapper = new ObjectMapper();
 
@@ -172,13 +192,13 @@ public class LoginController {
     @CrossOrigin(origins = "*",allowCredentials = "true")
     @ResponseBody
     public ResultBean check2(@CookieValue(name = "user_uuid",required = false) String uuid,
-                        HttpServletRequest request, String callBack) throws JsonProcessingException {
+                        HttpServletRequest request, String callBack,HttpServletResponse response) throws JsonProcessingException {
         ResultBean resultBean = null;
         ObjectMapper objectMapper = new ObjectMapper();
 
         if(uuid != null){
            // resultBean = userService.checkLogin(uuid);
-            resultBean = checkLogin(uuid, request, callBack);
+            resultBean = checkLogin(uuid, request, callBack,response);
 
             //return callBack+"("+ string+")";
 

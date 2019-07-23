@@ -29,6 +29,8 @@
         <module name="v13-item-web" />
         <module name="v13-login-web" />
         <module name="v13-mapper" />
+        <module name="v13-miaosha" />
+        <module name="v13-pay-web" />
         <module name="v13-product-api" />
         <module name="v13-product-service" />
         <module name="v13-register-web" />
@@ -69,6 +71,8 @@
       <module name="v13-item-web" target="1.8" />
       <module name="v13-login-web" target="1.8" />
       <module name="v13-mapper" target="1.8" />
+      <module name="v13-miaosha" target="1.8" />
+      <module name="v13-pay-web" target="1.8" />
       <module name="v13-product-api" target="1.5" />
       <module name="v13-product-service" target="1.8" />
       <module name="v13-register-web" target="1.8" />
