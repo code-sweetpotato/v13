@@ -1,8 +1,10 @@
 package work;
 
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
 import java.util.Map;
 
 public interface OracleStudy {
@@ -28,5 +30,26 @@ public interface OracleStudy {
             "END IF;" +
             "END;")
     public Map<String,Object> updateSwitch(Map<String,Object> map);
+
+    @Select("<script>" +
+            "select * from (select ar.name as \"custName\",ar.mobile as \"mobile\",to_char(ar.date_appoint," +
+            "'yyyy.MM.dd') as\"appointDate\" from csp_appoint_register ar where not exists(select s.appoint_no\n" +
+            "from csp_el_city_channel_info s where s.appoint_no = ar.appoint_no) ar.um = #{map.salesManCode}\n" +
+            "<if test = \"map.mainLoanCode != null\">" +
+            "and ar.main_loan_code = #{mainLoanCode}" +
+            "</if>)" +
+            "and ar.agent_dept_no in\n" +
+            "<foreach collection=\"map.deptCode\" item=\"item\" index=\"index\" open =\"(\" close=\")\" separator=\",\">" +
+            "#{item}" +
+            "</foreach> ) tab2 where 1=1\n" +
+            "<choose>" +
+            "<when test=\"'desc'.toString() == map.orderByTime\">" +
+            "order by tab2.\"appointDate\" desc,tab2.\"appointNo\"" +
+            "<otherwise>" +
+            "order by tab2.\"appoimtDate\" asc,tab2.\"appointNo\"" +
+            "</otherwise>" +
+            "</choose>" +
+            "</script>")
+    List<Map<String,Object>> queryLifeMap(@Param("map") Map<String,Object> map);
 
 }
