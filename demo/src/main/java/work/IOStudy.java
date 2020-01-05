@@ -3,10 +3,7 @@ package work;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +26,13 @@ public class IOStudy {
                     bufferedWriter.newLine();//换行
                 }
                 //一定调用flush方法，不然用户信息不会写入文件中,文件写入完成后，关流
-                fileWriter.close();
+                fileWriter.flush();
             }
+            InputStream is = new FileInputStream(filename);//文件中得到流
+            String s = "将数据封装成字符串";
+            byte[] bytes = s.getBytes();
+            InputStream is2 = new ByteArrayInputStream(bytes);
+
         } catch (IOException e) {
             e.printStackTrace();
             throw e;
