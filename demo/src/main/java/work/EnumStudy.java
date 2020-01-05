@@ -19,8 +19,4 @@ public enum EnumStudy implements OP{
             return "他好";
         }
     };
-
-
-
-
 }
