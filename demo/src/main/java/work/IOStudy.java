@@ -43,4 +43,27 @@ public class IOStudy {
         }
         return null;
     }
+
+    private void writeDemo() throws Exception {
+        BufferedInputStream fis;
+        fis = new BufferedInputStream(new FileInputStream("文件路径"));
+        //用5M的缓冲读取文本文件
+        BufferedReader reader = new BufferedReader(new InputStreamReader(fis,"utf-8"),520);
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new BufferedOutputStream(new FileOutputStream("输出文件路径"))));
+        try {
+            String line = "";
+            while ((line = reader.readLine()) != null){//读取每一行
+                // todo 进行业务操作代码
+
+            }
+            writer.flush();
+        }catch (Exception e){
+
+        }finally {
+            IOUtils.closeQuietly(writer);
+            IOUtils.closeQuietly(reader);
+            IOUtils.closeQuietly(fis);
+        }
+    }
+
 }

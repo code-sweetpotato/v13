@@ -2,6 +2,8 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/DB/zhangwei040_01.sql" charset="GB18030" />
+    <file url="file://$PROJECT_DIR$/demo/src/main/DB/zhangwei040_02.sql" charset="GB18030" />
     <file url="file://$PROJECT_DIR$/v13-api/v13-search-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/v13-basic/v13-mapper" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/v13-service/v13-cart-service" charset="UTF-8" />

@@ -8,4 +8,28 @@
           SELECT a.name from t_student a where a.id = #{id}
         ]]>
     </select>
+
+
+
+    <insert id="insertDetail" parameterType="java.util.Map" >
+        <selectKey resultType="java.lang.String">
+            SELECT sys_guid() as id from t_student
+        </selectKey>
+        INSERT INTO t_student
+        (id,name,age)
+        VALUES
+        (#{id},#{name},#{age})
+    </insert>
+    <insert id="insertSign" parameterClass="java.util.List">
+      insert all
+      <iterate conjunct=" ">
+          (name,age)
+          VALUES (
+            #list[].name#,
+          #list[].age#,
+          )
+      </iterate>
+    </insert>
+    select * from dual
+
 </mapper>

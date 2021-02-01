@@ -30,4 +30,7 @@ public class CheckResult {
 
     public CheckResult() {
     }
+
+
+
 }

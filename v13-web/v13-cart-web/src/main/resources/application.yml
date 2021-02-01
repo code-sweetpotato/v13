@@ -1,0 +1,15 @@
+dubbo:
+  application:
+    name: cart-web
+  registry:
+    protocol: zookeeper
+    address: 106.14.57.231:2181
+  consumer:
+    timeout: 12000
+server:
+  port: 9097
+
+spring:
+  thymeleaf:
+    cache: false
+
